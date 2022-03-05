@@ -5,8 +5,10 @@ const Intern = require("./lib/Intern");
 const render = require("./lib/htmlRender");
 // Npm classes
 const inquirer = require("inquirer");
+const path = require("path");
 const fs = require("fs");
-const jest = require("jest");
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const teamMember = []; // An array can be const
 const index = []; // ID index
@@ -28,7 +30,7 @@ function buildTeam() {
             } else if (choices.chooseAMember == "Intern") {
                 makeIntern();
             } else {
-                makeTeam();
+                htmlBuilder();
             }
         });
 }
@@ -158,8 +160,8 @@ function makeEngineer() {
             }
         ])
         .then((answer) => {
-            const Engineer = new Engineer(answer.engName, answer.engID, answer.email, answer.gitHub);
-            teamMember.push(Engineer);
+            const engineer = new Engineer(answer.engName, answer.engID, answer.email, answer.gitHub);
+            teamMember.push(engineer);
             index.push(answer.manID);
             buildTeam();
         });
@@ -230,7 +232,10 @@ function makeIntern() {
             buildTeam();
         });
 }
-
+function htmlBuilder() {
+    console.log("Team created!")
+    fs.writeFileSync(outputPath, render(teamMember), "UTF-8")
+}
 
 
 // Run the program
