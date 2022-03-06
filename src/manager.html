@@ -1,18 +1,15 @@
-<div class="Manager-card">
-    <!-- Name and title -->
+<div class="card employee-card">
     <div class="card-header">
-        <!-- Name -->
-        <h2> </h2>
-        <!-- Role -->
-        <h2><i class="fa-thin fa-address-card"></i>Manager</h2>
+        <h2 class="card-title">${manager.getName()}</h2>
+        <h2 class="card-title"><i class="fa-thin fa-address-card"></i>${manager.getRole()}</h2>
     </div>
-
-    <!-- Id, Email & Room -->
     <div class="card-body">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${manager.getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+            <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
         </ul>
     </div>
 </div>
+
+module.exports = manRend;
