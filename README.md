@@ -30,10 +30,10 @@ You can access a live video link version at (https://drive.google.com/file/d/1gs
 ### Download Zip
 1. Go to the repo on (https://github.com/K-Bugz/team-profile-generator).
 2. Click the green code button
-   ![Code Button](./assets/images/green_code_button_github.png)
+   (./assets/images/green_code_button_github.png)
 3. Then click Download Zip button at the bottom.
    - Alternatively you can also (https://github.com/DevJonTaylor/wing-map/archive/refs/heads/main.zip)
-   ![Download Zip](./assets/images/download_zip_github.png)
+   (./assets/images/download_zip_github.png)
 ### Clone
 1. Head to the (https://github.com/K-Bugz/team-profile-generator)
 2. Click the green code.
